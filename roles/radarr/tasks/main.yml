@@ -14,8 +14,7 @@
         image: "{{ radarr_image_name }}:{{ radarr_image_version }}"
         pull: true
         volumes:
-          - "{{ radarr_movies_directory }}:/movies:rw"
-          - "{{ radarr_download_directory }}:/downloads:rw"
+          - "{{ samba_shares_root }}:/data:rw"
           - "{{ radarr_data_directory }}:/config:rw"
         ports:
           - "{{ radarr_port }}:7878"
